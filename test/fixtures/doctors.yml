@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  doctor_first_name: MyString
+  doctor_last_name: MyString
+  doctor_email: MyString
+  doctor_password_digest: MyString
+  doctor_specialty: MyString
+
+two:
+  doctor_first_name: MyString
+  doctor_last_name: MyString
+  doctor_email: MyString
+  doctor_password_digest: MyString
+  doctor_specialty: MyString

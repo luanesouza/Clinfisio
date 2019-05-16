@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  session_type: MyString
+  session_qnty: 1
+  session_bilateral: false
+  session_price: MyString
+  evaluation_price: 1
+  discount: false
+  discount_price: 1
+  patient_dependent: false
+
+two:
+  session_type: MyString
+  session_qnty: 1
+  session_bilateral: false
+  session_price: MyString
+  evaluation_price: 1
+  discount: false
+  discount_price: 1
+  patient_dependent: false

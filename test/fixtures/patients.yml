@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patient_first_name: MyString
+  patient_last_name: MyString
+  patient_phone_number: MyString
+  diagnose: MyString
+  address: MyString
+  cpf_rg: MyString
+  dob: MyString
+  insurance: MyString
+  invoice_days: 1
+  enrollment_number: MyString
+  disease_classification: MyString
+  pass_number: MyString
+  doctor_petitioner: MyString
+  clinic_petitioner: MyString
+  federal_medicine_council: MyString
+  patient_present: false
+
+two:
+  patient_first_name: MyString
+  patient_last_name: MyString
+  patient_phone_number: MyString
+  diagnose: MyString
+  address: MyString
+  cpf_rg: MyString
+  dob: MyString
+  insurance: MyString
+  invoice_days: 1
+  enrollment_number: MyString
+  disease_classification: MyString
+  pass_number: MyString
+  doctor_petitioner: MyString
+  clinic_petitioner: MyString
+  federal_medicine_council: MyString
+  patient_present: false
