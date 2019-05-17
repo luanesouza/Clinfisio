@@ -17,7 +17,51 @@
  @import "bulma";
 
 h1 {
+  text-align: center;
   background-color: red;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  align-items: center;
+  justify-content: center;
+  margin: 1.6em;
+  padding: .5em;
+  border: .08em solid black;
+  border-radius: .5em;
+  width: 90vw;
+  height: 70vh;
+  overflow-y: scroll;
+  background-color: rgba(245,245,245, 6);
+}
+
+input {
+  width: 60vw;
+  height: 6vh;
+  margin-bottom: .6em;
+  border-radius: .3em;
+  border: 1px solid rgba(123, 239, 178, 1);
+  font-size: 2vw;
+  padding: .6em;
+}
+
+.field {
+  // border: 1px solid gray;
+  border-radius: .5em;
+  padding: .7em;
+  // background-color: rgb(245,245,245);
+}
+
+.label {
+  font-size: 3vw;
+}
+
+button {
+  // width: 100vw;
 }
 
 // .scrollable-div {
