@@ -1,28 +1,39 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">Clinfisio Logo<%= notice %></p>
 
-<h1>Patients</h1>
+<h1 class="title">Pacientes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @patients.each do |patient| %>
+<div>
+  <table class="table is-striped is-hoverable is-fullwidth is-scrollable">
+    <thead>
       <tr>
-        <td> Paciente: <%= patient.patient_first_name %></td>
-        <td><%= patient.patient_last_name %></td>
-        <td><%= patient.patient_first_name %></td>
-        <td><%= link_to 'Show More', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th colspan="1"> <%= link_to 'New Patient', new_patient_path %>
+  </th>
+
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <tr>
+        <th colspan="2">Nome do Paciente</th>
+        <th colspan="2">Plano de Saude</th>
+        <th colspan="2">Diagnostico</th>
+        <th colspan="2">Contato</th>
+        <th colspan="2">RG/CPF</th>
 
-<%= link_to 'New Patient', new_patient_path %>
+      </tr>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td colspan="2"><%= link_to patient.patient_first_name, patient %>
+                          <%= link_to patient.patient_last_name, patient %></td>
+          <td colspan="2"><%= patient.insurance %></td>
+          <td colspan="2"><%= patient.diagnose %></td>
+          <td colspan="2"><%= patient.patient_phone_number %></td>
+          <td colspan="2"><%= patient.cpf_rg %></td>
+          <!-- <td colspan="3"><%= link_to 'Mais', patient %></td> -->
+          <td class="button is-info is-outlined is-focused" colspan="3"><%= link_to 'Editar', edit_patient_path(patient) %></td>
+          <td class="button is-danger is-outlined is-focused" colspan="3"><%= link_to 'Apagar', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

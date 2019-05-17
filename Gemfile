@@ -49,7 +49,13 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   #Reloads the browser when the views folder is modified
-    gem 'guard-livereload', '~> 2.5', require: false
+  gem 'guard-livereload', '~> 2.5', require: false
+  #Bulma for styling
+  gem "bulma-rails", "~> 0.7.4"
+
+  # Gem for creating a table
+  gem "wice_grid"
+  gem 'font-awesome-sass',  '~> 4.3'
 end
 
 group :test do
