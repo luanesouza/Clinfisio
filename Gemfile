@@ -56,6 +56,8 @@ group :development do
   # Gem for creating a table
   gem "wice_grid"
   gem 'font-awesome-sass',  '~> 4.3'
+  # reload live
+  gem 'guard-livereload', '~> 2.5', require: false
 end
 
 group :test do

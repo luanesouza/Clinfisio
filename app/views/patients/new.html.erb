@@ -1,5 +1,8 @@
-<h1>New Patient</h1>
+<div class="patient-info-show">
+  <h1>Registrando novo paciente...</h1>
 
-<%= render 'form', patient: @patient %>
-
-<%= link_to 'Voltar', patients_path %>
+  <%= render 'form', patient: @patient %>
+    <div class="edit-return">
+      <%= link_to 'Voltar', patients_path %>
+    </div>
+</div>

@@ -1,4 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Editar', edit_patient_path(@patient) %> |
-<%= link_to 'Voltar', patients_path %>
+<div class="patient-info-show">
+
+  <h1 class="title"><%= @patient.patient_first_name %> <%= @patient.patient_last_name %></h1>
+  <h3><span>Endereço:</span> <%= @patient.address %></h3>
+  <div class="patient-section-2">
+    <h3 id="p-show-section"><span>Numero de telefone:</span> <%= @patient.patient_phone_number %></h3>
+    <h3 id="p-show-section"><span>CPF ou RG:</span> <%= @patient.cpf_rg %></h3>
+    <h3 id="p-show-section"><span>Data de Nascimento:</span> <%= @patient.dob %></h3>
+  </div>
+  <h3><span>Plano de Saude:</span> <%= @patient.insurance %></h3>
+  <div class="patient-section-2">
+    <h3 id="p-show-section"><span>Matricula:</span> <%= @patient.enrollment_number %></h3>
+    <h3 id="p-show-section"><span>Dias para faturar:</span> <%= @patient.invoice_days %></h3>
+    <h3 id="p-show-section"><span>CID:</span> <%= @patient.disease_classification%></h3>
+    <h3 id="p-show-section"><span>Senha:</span> <%= @patient.pass_number %></h3>
+  </div>
+  <div class="patient-section-2">
+    <h3 id="p-show-section"><span>Medico Solicitante:</span> <%= @patient.doctor_petitioner%></h3>
+    <h3 id="p-show-section"><span>CRM:</span> <%= @patient.federal_medicine_council %></h3>
+  </div>
+  <div class="patient-section-2">
+    <h3 id="p-show-section"><span>Diagnostico:</span> <%= @patient.diagnose %></h3>
+    <h3 id="p-show-section"><span>Clinica Solicitante:</span> <%= @patient.clinic_petitioner %></h3>
+  </div>
+  <div class="edit-return">
+    <%= link_to 'Editar', edit_patient_path(@patient) %> |
+    <%= link_to 'Voltar', patients_path %>
+  </div>
+</div>

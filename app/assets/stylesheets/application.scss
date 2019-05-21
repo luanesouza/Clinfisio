@@ -16,10 +16,10 @@
  */
  @import "bulma";
 
-h1 {
-  text-align: center;
-  background-color: red;
-}
+// h1 {
+//   text-align: center;
+//   background-color: red;
+// }
 
 form {
   display: flex;
@@ -31,16 +31,16 @@ form {
   justify-content: center;
   margin: 1.6em;
   padding: .5em;
-  border: .08em solid black;
+  // border: .08em solid black;
   border-radius: .5em;
   width: 90vw;
   height: 70vh;
   overflow-y: scroll;
-  background-color: rgba(245,245,245, 6);
+  // background-color: rgba(245,245,245, 6);
 }
 
 input {
-  width: 60vw;
+  width: 50vw;
   height: 6vh;
   margin-bottom: .6em;
   border-radius: .3em;
@@ -57,14 +57,50 @@ input {
 }
 
 .label {
-  font-size: 3vw;
+  font-size: 2.4vw;
 }
 
 button {
-  // width: 100vw;
+  // width: 30vw;
+
+}
+
+#save-btt {
+  text-align: center;
 }
 
 // .scrollable-div {
 //   width: 100vw;
 //   overflow-y: auto;
 // }
+
+.patient-info-show {
+  margin: 3em;
+  padding: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 85vh;
+  overflow-y: scroll;
+}
+
+.patient-section-2 {
+  display: flex;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#p-show-section {
+  padding-right: 2em;
+}
+
+span {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.edit-return {
+  text-align: center;
+  margin-top: .6em;
+  font-size: 1.2em;
+  padding-bottom: .5em;
+  margin-top: .6em;
+}
