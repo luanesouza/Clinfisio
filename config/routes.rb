@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :appointments
   end
 
+  resources :appointments
+
   resources :sessions
 
   resources :expenses

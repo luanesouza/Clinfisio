@@ -24,6 +24,7 @@
         </tr>
         <% @patients.each do |patient| %>
           <tr>
+
             <td colspan="2"><%= link_to patient.patient_first_name, patient %>
                             <%= link_to patient.patient_last_name, patient %></td>
             <td colspan="2"><%= patient.insurance %></td>
@@ -32,7 +33,7 @@
             <td colspan="2"><%= patient.cpf_rg %></td>
             <!-- <td colspan="3"><%= link_to 'Mais', patient %></td> -->
             <td class="button is-info is-outlined is-focused" colspan="1"><%= link_to '✏️', edit_patient_path(patient) %></td>
-            <td class="button is-danger is-outlined is-focused" colspan="1"><%= link_to '❌', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="button is-danger is-outlined is-focused" colspan="1"><%= link_to '❌', patient, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
           </tr>
         <% end %>
       </tbody>

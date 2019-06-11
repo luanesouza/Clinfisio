@@ -5,13 +5,15 @@ class PatientsController < ApplicationController
   # GET /patients.json
 
   def index
-    @patients = Patient.all
+    @patients = Patient.all.sort_by { |h | h[:patient_first_name] }
+    @appointments = Appointment.all
   end
 
   # GET /patients/1
   # GET /patients/1.json
   def show
     @patient = Patient.find(params[:id])
+    @appointments = Appointment.where(patient_id: @patient.id)
   end
 
   # GET /patients/new
@@ -21,6 +23,7 @@ class PatientsController < ApplicationController
 
   # GET /patients/1/edit
   def edit
+    @patient = Patient.find(params[:id])
   end
 
   # POST /patients
@@ -30,7 +33,7 @@ class PatientsController < ApplicationController
 
     respond_to do |format|
       if @patient.save
-        format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
+        format.html { redirect_to @patient, notice: 'Novo paciente criado.' }
         format.json { render :show, status: :created, location: @patient }
       else
         format.html { render :new }
@@ -43,8 +46,8 @@ class PatientsController < ApplicationController
   # PATCH/PUT /patients/1.json
   def update
     respond_to do |format|
-      if @patient.update(patient_params)
-        format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
+      if @patient.update_attributes(patient_params)
+        format.html { redirect_to @patient, notice: 'A informacao do paciente foi atualizado.' }
         format.json { render :show, status: :ok, location: @patient }
       else
         format.html { render :edit }
@@ -58,7 +61,7 @@ class PatientsController < ApplicationController
   def destroy
     @patient.destroy
     respond_to do |format|
-      format.html { redirect_to patients_url, notice: 'Patient was successfully destroyed.' }
+      format.html { redirect_to patients_url, notice: 'Paciente removido.' }
       format.json { head :no_content }
     end
   end

@@ -4,15 +4,13 @@ class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
   def index
-      @doctor = Doctor.find(params[:doctor_id])
-      @appointments = Appointment.where(doctor_id: @doctor.id)
-      render json: @appointments
+    @appointments = Appointment.all
   end
 
   # GET /appointments/1
   # GET /appointments/1.json
   def show
-      @doctor = Doctor.find(params[:doctor_id])
+      @patient = Patient.find(params[:patient_id])
       @appointments = Appointment.find(params[:id])
       render json: @appointment
   end
