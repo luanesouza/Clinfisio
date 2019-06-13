@@ -47,7 +47,7 @@ class PatientsController < ApplicationController
   def update
     respond_to do |format|
       if @patient.update_attributes(patient_params)
-        format.html { redirect_to @patient, notice: 'A informacao do paciente foi atualizado.' }
+        format.html { redirect_to @patient, notice: 'A informacao do paciente foi atualizada.' }
         format.json { render :show, status: :ok, location: @patient }
       else
         format.html { render :edit }
