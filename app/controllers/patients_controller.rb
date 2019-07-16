@@ -5,7 +5,7 @@ class PatientsController < ApplicationController
   # GET /patients.json
 
   def index
-    @patients = Patient.all.sort_by { |h | h[:patient_first_name] }
+    @patients = Patient.all.sort_by { |name | name[:patient_first_name] }
     @appointments = Appointment.all
   end
 

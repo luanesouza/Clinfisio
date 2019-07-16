@@ -8,74 +8,27 @@
     </div>
 
     <div class="field">
-      <label class="label"> Sobrenome</label>
-      <%= f.text_field :patient_last_name, placeholder: "Sobrenome" %>
-    </div>
-
-    <div class="field">
       <label class="label"> CPF ou RG</label>
-      <%= f.text_field :cpf_rg, placeholder: "CPF ou RG" %>
+      <%= f.text_field :doctor_name, placeholder: "Doctor Name ..." %>
     </div>
 
     <div class="field">
-      <label class="label"> Contato</label>
-      <%= f.text_field :patient_phone_number, placeholder: "Contato" %>
+      <label class="label"> Paciente presente</label>
+      <%= f.check_box :patient_present %>
     </div>
 
     <div class="field">
-      <label class="label"> Diagnostico</label>
-      <%= f.text_field :diagnose, placeholder: "Diagnostico" %>
+      <label for="label"> Medicos</label>
+      <%= f.collection_select :doctor_id, Doctor.order(:doctor_first_name), :id%>
+
     </div>
 
     <div class="field">
-      <label class="label"> Plano de Saude</label>
-      <%= f.text_field :insurance, placeholder: "Plano de Saude" %>
+      <label class="label"> Data</label>
+      <%= f.text_field :date, placeholder: "Diagnostico" %>
     </div>
 
-    <div class="field">
-      <label class="label"> Endereco</label>
-      <%= f.text_field :address, placeholder: "Endereco" %>
-    </div>
 
-    <div class="field">
-      <label class="label"> Data de Nascimento</label>
-      <%= f.text_field :dob, placeholder: "Data de Nascimento" %>
-    </div>
-
-    <div class="field">
-      <label class="label"> Dias para Faturar</label>
-      <%= f.text_field :invoice_days, placeholder: "Dias para Faturar" %>
-    </div>
-
-    <div class="field">
-      <label class="label"> Matricula</label>
-      <%= f.text_field :enrollment_number, placeholder: "Matricula" %>
-    </div>
-
-    <div class="field">
-      <label class="label"> CID</label>
-      <%= f.text_field :disease_classification, placeholder: "CID" %>
-    </div>
-
-    <div class="field">
-      <label class="label"> Senha</label>
-      <%= f.text_field :pass_number, placeholder: "Senha" %>
-    </div>
-
-    <div class="field">
-      <label class="label"> Medico Solicitante</label>
-      <%= f.text_field :doctor_petitioner, placeholder: "Medico Solicitante" %>
-    </div>
-
-    <div class="field">
-      <label class="label"> CRM </label>
-      <%= f.text_field :federal_medicine_council, placeholder: "CRM" %>
-    </div>
-
-    <div class="field">
-      <label class="label"> Clinica Solicitante</label>
-      <%= f.text_field :clinic_petitioner, placeholder: "Clinica Solicitante" %>
-    </div>
     <div id="save-btt">
       <%= f.button "Salvar", type: :submit%>
     </div>

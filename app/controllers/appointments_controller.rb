@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  require 'pry'
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   # GET /appointments
@@ -17,11 +18,14 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/new
   def new
+    @doctor = Doctor.all
     @appointment = Appointment.new
   end
 
   # GET /appointments/1/edit
   def edit
+    @doctor = Doctor.find(params[:doctor_id])
+    @appointment = Appointment.find(params[:id])
   end
 
   # POST /appointments
