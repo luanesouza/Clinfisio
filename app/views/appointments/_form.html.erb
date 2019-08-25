@@ -3,12 +3,12 @@
   <%= form_for @appointment do |f| %>
 
     <div class="field">
-      <label class="label"><p> Paciente </p></label>
+      <label class="label" name="patient_name"><p> Paciente </p></label>
       <%= f.text_field :patient_name, placeholder: "Nome" %>
     </div>
 
     <div class="field">
-      <label class="label"> CPF ou RG</label>
+      <label class="label" name="CPF_RG"> Doctor Name</label>
       <%= f.text_field :doctor_name, placeholder: "Doctor Name ..." %>
     </div>
 
@@ -19,13 +19,22 @@
 
     <div class="field">
       <label for="label"> Medicos</label>
-      <%= f.collection_select :doctor_id, Doctor.order(:doctor_first_name), :id%>
+      <%= f.collection_select(:doctor_id, @doctors, :id, :doctor_first_name) %>
+    </div>
 
+    <div class="field">
+      <label for="label"> Paciente</label>
+      <%= f.collection_select(:patient_id, @patients, :id, :patient_first_name) %>
     </div>
 
     <div class="field">
       <label class="label"> Data</label>
       <%= f.text_field :date, placeholder: "Diagnostico" %>
+    </div>
+
+    <div class="field">
+      <label class="label"> Horario</label>
+      <%= f.text_field :time, placeholder: "Horario" %>
     </div>
 
 

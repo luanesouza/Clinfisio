@@ -11,14 +11,13 @@ class AppointmentsController < ApplicationController
   # GET /appointments/1
   # GET /appointments/1.json
   def show
-      @patient = Patient.find(params[:patient_id])
-      @appointments = Appointment.find(params[:id])
-      render json: @appointment
+    @appointments = Appointment.find(params[:id])
   end
 
   # GET /appointments/new
   def new
-    @doctor = Doctor.all
+    @doctors = Doctor.all
+    @patients = Patient.all
     @appointment = Appointment.new
   end
 
@@ -31,11 +30,12 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
-      @doctor = Doctor.find(params[:doctor_id])
+      @doctor = Doctor.find(appointment_params[:doctor_id])
+      @patient = Patient.find(appointment_params[:patient_id])
       @appointment = Appointment.new(appointment_params)
 
       if @appointment.save
-        render json: @appointment, status: :created
+        redirect_to @appointment, status: :created
       else
         render json: @appointment.errors, status: :unprocessable_entity
     end
@@ -47,7 +47,7 @@ class AppointmentsController < ApplicationController
     @doctor = Doctor.find(params[:doctor_id])
     @appointment = Appointment.find(params[:id])
     if @appointment.update_attributes(appointment_params)
-      render json: @appointment
+      redirect_to @appointment
     else
       render json: @appointment.errors, status: :unprocessable_entity
     end
